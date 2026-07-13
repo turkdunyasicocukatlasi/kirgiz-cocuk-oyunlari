@@ -1,0 +1,10 @@
+{
+	"name": "Video",
+	"plugin-id": "video",
+	"sid": 921272141480524,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

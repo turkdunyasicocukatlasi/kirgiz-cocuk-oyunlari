@@ -1,0 +1,371 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 48703,
+	"name": "Template",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "video",
+			"name": "Video",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "7roq25yg50g",
+	"objectTypes": {
+		"items": [
+			"Touch",
+			"Browser",
+			"loaderEmpty",
+			"loaderFill",
+			"loaderLogo",
+			"arkaplan",
+			"Text",
+			"Video",
+			"IntroVideo",
+			"PlayButtonBg"
+		],
+		"subfolders": []
+	},
+	"functionsName": "Functions",
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"intro",
+			"loader",
+			"game"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"introE",
+			"loaderE",
+			"gameE"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "click.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 794201605429888,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "false.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 927832705531194,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "true.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 338448079052483,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "greeting.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 869956187725422,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [
+				{
+					"name": "video1.mp4",
+					"type": "video/mp4",
+					"sid": 759313466433606,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "intro.mp4",
+					"type": "video/mp4",
+					"sid": 694338198762401,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "Calibri.woff",
+					"type": "application/font-woff",
+					"sid": 565089120521875,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-114.png",
+					"type": "image/png",
+					"sid": 384480257655336,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 166067162056539,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 122326045221186,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 306560495755305,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 758189680572802,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 234756418826036,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 487794177510946,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 581817956415341,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": [
+				{
+					"name": "game",
+					"items": [
+						{
+							"name": "index.html",
+							"type": "text/html",
+							"sid": 632157850128407,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "arkafon.png",
+							"type": "image/png",
+							"sid": 480824093787299,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "kumalak.png",
+							"type": "image/png",
+							"sid": 420127994175845,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "kapak.png",
+							"type": "image/png",
+							"sid": 865400521923708,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "nasiloynanir.png",
+							"type": "image/png",
+							"sid": 778150432487607,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": []
+				}
+			]
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [
+			"Flowchart 1"
+		],
+		"subfolders": []
+	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"autoIncrementVersion": false,
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "regular",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"fixedFramerate": 30,
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress",
+		"preloadSounds": true,
+		"uidAllocationMode": "increment",
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"scriptsType": "module"
+	},
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
+	"firstLayout": "loader"
+}

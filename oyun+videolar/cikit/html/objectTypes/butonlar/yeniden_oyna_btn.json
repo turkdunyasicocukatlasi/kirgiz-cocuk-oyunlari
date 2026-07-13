@@ -1,0 +1,58 @@
+{
+	"name": "yeniden_oyna_btn",
+	"plugin-id": "Sprite",
+	"sid": 904198843437859,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 756,
+						"height": 129,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9505183,
+						"collisionPoly": {
+							"points": [
+								0.13513513513513514,
+								0,
+								0.9378378378378378,
+								0.06956521739130435,
+								0.9675675675675676,
+								0.14782608695652175,
+								0.9459459459459459,
+								0.8956521739130435,
+								0.8702702702702703,
+								1,
+								0.0972972972972973,
+								0.9652173913043478,
+								0.07567567567567568,
+								0.9304347826086956
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 865692890986332,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

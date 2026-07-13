@@ -1,0 +1,534 @@
+{
+	"name": "oyunES2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Ilk_X2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 374813973905062
+		},
+		{
+			"eventType": "variable",
+			"name": "Ilk_Y2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 752702769044262
+		},
+		{
+			"eventType": "variable",
+			"name": "Gecis_Hiz_X2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 725956444326433
+		},
+		{
+			"eventType": "variable",
+			"name": "Gecis_Hiz_Y2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 318511864716783
+		},
+		{
+			"eventType": "variable",
+			"name": "Gecis_Acisal_Hiz2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 108504960241330
+		},
+		{
+			"eventType": "variable",
+			"name": "Gecis_Y_Konumu2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 113596137977923
+		},
+		{
+			"eventType": "variable",
+			"name": "Oyun_Bitti",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 529958279629415
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ortak_eventlerES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 609876525025770
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-style2",
+					"objectClass": "Mouse",
+					"sid": 552602158931685,
+					"parameters": {
+						"cursor-style": "none"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 706341240949759,
+					"parameters": {
+						"variable": "LayoutMuzikSesi",
+						"value": "-20"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "sopa_kisa",
+					"sid": 299345265591772,
+					"parameters": {
+						"y": "Gecis_Y_Konumu"
+					}
+				},
+				{
+					"id": "set-velocity",
+					"objectClass": "sopa_kisa",
+					"sid": 258873754337907,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "Gecis_Hiz_X",
+						"y-component": "Gecis_Hiz_Y"
+					}
+				},
+				{
+					"id": "set-angular-velocity",
+					"objectClass": "sopa_kisa",
+					"sid": 390636571424362,
+					"behaviorType": "Physics",
+					"parameters": {
+						"angular-velocity": "Gecis_Acisal_Hiz"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el_sopa",
+					"sid": 251591053159833,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 626222643043487
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "el",
+					"sid": 768251619537983,
+					"parameters": {
+						"object": "sopa_kisa"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 532290019084644,
+					"parameters": {
+						"variable": "Oyun_Bitti",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 700991850587456,
+					"parameters": {
+						"variable": "Oyun_Bitti",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "sopa_kisa",
+					"sid": 107121703556501,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "sopa_kisa",
+					"sid": 132776877362882,
+					"parameters": {
+						"object": "el",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el",
+					"sid": 654756625151735,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sopa_kisa",
+					"sid": 590416197811041,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el_sopa",
+					"sid": 579641053535063,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 312861521877609,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "madalya",
+					"sid": 317115234862165,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el_sopa",
+					"sid": 519962235232922,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-cursor-style2",
+					"objectClass": "Mouse",
+					"sid": 163456128315089,
+					"parameters": {
+						"cursor-style": "normal"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "yeniden_oyna_btn1",
+					"sid": 370352913176155,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 458772785685825
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 414481550270936
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 158547240112426,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "el",
+					"sid": 785399142574201,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "el_sopa",
+					"sid": 768990490858754,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 569813897695212
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "sopa_kisa",
+					"sid": 295637915259892,
+					"parameters": {
+						"object": "zemin"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 159113133241313,
+					"parameters": {
+						"variable": "Oyun_Bitti",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 415312643827876,
+					"parameters": {
+						"variable": "Oyun_Bitti",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "sopa_kisa",
+					"sid": 428033573075318,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el_sopa",
+					"sid": 160776835771668,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "kayip",
+					"sid": 675258334721595,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-cursor-style2",
+					"objectClass": "Mouse",
+					"sid": 769477461170729,
+					"parameters": {
+						"cursor-style": "normal"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el",
+					"sid": 640381830294086,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "yeniden_oyna_btn1",
+					"sid": 579367693567786,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 426432579623510
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "sopa_kisa",
+					"sid": 501886570731189
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "sopa_kisa",
+					"sid": 138558987951057,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "50"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 442900881242470,
+					"parameters": {
+						"variable": "Oyun_Bitti",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 410258573693083,
+					"parameters": {
+						"variable": "Oyun_Bitti",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "sopa_kisa",
+					"sid": 696151537233468,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el_sopa",
+					"sid": 533840907497432,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "el",
+					"sid": 880755407201510,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "kayip",
+					"sid": 907204553861683,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-cursor-style2",
+					"objectClass": "Mouse",
+					"sid": 575224147681886,
+					"parameters": {
+						"cursor-style": "normal"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "yeniden_oyna_btn1",
+					"sid": 505021425756301,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 685764932117162
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 793451079346271,
+					"parameters": {
+						"object": "yeniden_oyna_btn1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 758327763973971,
+					"parameters": {
+						"layout": "oyun"
+					}
+				}
+			],
+			"sid": 258923515938937
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 114752000170977
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 268932395354865
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "el",
+					"sid": 722501397310276,
+					"parameters": {
+						"x": "Touch.X-50",
+						"y": "Touch.Y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "el_sopa",
+					"sid": 186992495552965,
+					"parameters": {
+						"x": "Touch.X-50",
+						"y": "Touch.Y"
+					}
+				}
+			],
+			"sid": 591368938761565
+		}
+	],
+	"sid": 269866082752900
+}

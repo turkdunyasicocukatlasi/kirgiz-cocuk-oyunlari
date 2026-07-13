@@ -1,0 +1,17 @@
+{
+	"name": "Fam_butonlar",
+	"plugin-id": "Sprite",
+	"sid": 156542462672649,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"anaysayfa_btn",
+		"basla_btn",
+		"bilgi_btn",
+		"ses_ac_btn",
+		"tam_ekran_btn",
+		"yeniden_oyna_btn",
+		"yeniden_oyna_btn1"
+	]
+}

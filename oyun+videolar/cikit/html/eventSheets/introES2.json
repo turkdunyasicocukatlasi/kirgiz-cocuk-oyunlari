@@ -1,0 +1,36 @@
+{
+	"name": "introES2",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-ended",
+					"objectClass": "Video",
+					"sid": 528004948372630
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 377016964607554,
+					"parameters": {
+						"seconds": "1.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 582328560092739,
+					"parameters": {
+						"layout": "giris"
+					}
+				}
+			],
+			"sid": 798306395615997
+		}
+	],
+	"sid": 540735836397089
+}

@@ -1,0 +1,179 @@
+{
+	"name": "introE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "introStage",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 514720349001785
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-ended",
+					"objectClass": "Video",
+					"sid": 813641290318222
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 780118623099352,
+					"parameters": {
+						"first-value": "introStage",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 402710832198740,
+					"parameters": {
+						"variable": "introStage",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Video",
+					"sid": 786428743125664,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "IntroVideo",
+					"sid": 126994702338501,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "IntroVideo",
+					"sid": 405307247483926
+				}
+			],
+			"sid": 765549228761691
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-ended",
+					"objectClass": "IntroVideo",
+					"sid": 186716594204198
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 248572113454814,
+					"parameters": {
+						"first-value": "introStage",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 117573485076449,
+					"parameters": {
+						"variable": "introStage",
+						"value": "2"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "PlayButtonBg",
+					"sid": 741096028112824,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Text",
+					"sid": 528769710128641,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 845522390571907
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 664907044315293,
+					"parameters": {
+						"object": "Text",
+						"type": "start"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Text",
+					"sid": 460027846821996
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-url",
+					"objectClass": "Browser",
+					"sid": 860346134441827,
+					"parameters": {
+						"url": "\"game/index.html\"",
+						"target": "self"
+					}
+				}
+			],
+			"sid": 729882147536210
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 235001792169443,
+					"parameters": {
+						"object": "PlayButtonBg",
+						"type": "start"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "PlayButtonBg",
+					"sid": 333361754800129
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-url",
+					"objectClass": "Browser",
+					"sid": 410612297253682,
+					"parameters": {
+						"url": "\"game/index.html\"",
+						"target": "self"
+					}
+				}
+			],
+			"sid": 834481511137204
+		}
+	],
+	"sid": 547392901678568
+}

@@ -1,0 +1,147 @@
+{
+	"name": "loaderE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "isLoader",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 160339356432197
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 751654263381564
+				}
+			],
+			"actions": [],
+			"sid": 251265394475616,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "loaderFill",
+							"sid": 337537658054317,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "300",
+								"time": "1",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 335940751202910,
+							"parameters": {
+								"seconds": "1.6",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 573497434855034,
+							"parameters": {
+								"variable": "isLoader",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 178722117120660
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 696624029595646
+				}
+			],
+			"actions": [],
+			"sid": 316789216663932,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 773152518310802,
+							"parameters": {
+								"variable": "isLoader"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "loaderFill",
+							"sid": 241280950796400,
+							"parameters": {
+								"width": "300 + (loadingprogress * 600)/2"
+							}
+						}
+					],
+					"sid": 858126386427632,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 772930684148957,
+									"parameters": {
+										"first-value": "loadingprogress",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 518852879469137,
+									"parameters": {
+										"seconds": "0.4",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 671944722927778,
+									"parameters": {
+										"layout": "intro"
+									}
+								}
+							],
+							"sid": 162383973942305
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 994513875370329
+}

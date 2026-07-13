@@ -1,0 +1,28 @@
+{
+	"name": "introES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-ended",
+					"objectClass": "Video",
+					"sid": 755113847880168
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 725351095594376,
+					"parameters": {
+						"seconds": "1.5",
+						"use-timescale": true
+					}
+				}
+			],
+			"sid": 409901814003955
+		}
+	],
+	"sid": 584190959001177
+}

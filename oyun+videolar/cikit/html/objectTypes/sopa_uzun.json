@@ -1,0 +1,52 @@
+{
+	"name": "sopa_uzun",
+	"plugin-id": "Sprite",
+	"sid": 697933038034159,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 491,
+						"height": 585,
+						"originX": 0.9694501018329938,
+						"originY": 0.9641025641025641,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1638147,
+						"collisionPoly": {
+							"points": [
+								0.002036659877800407,
+								0.0017094017094017033,
+								0.5906313584923987,
+								0.364102569502643,
+								0.9979633401221996,
+								0.9982905982905983,
+								0.3930753622424093,
+								0.5675213611024059
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 509931697433914,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

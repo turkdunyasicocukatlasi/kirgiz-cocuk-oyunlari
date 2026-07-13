@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kırgız Çocuk Oyunları</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-shell" aria-label="Kırgız çocuk oyunları menüsü">
+        <section class="game-map" aria-label="Oyun seçenekleri">
+            <article class="game-card left top" style="--delay: 0ms">
+                <div class="card-copy">
+                    <h2>ÇİKİT OYUNU</h2>
+                    <p>Kısa ve uzun sopalarla oynanan geleneksel beceri oyunu.</p>
+                </div>
+                <div class="actions">
+                    <button class="asset-button" type="button" data-video="oyun+videolar/cikit/cikit.mp4" aria-label="Çikit oyunu videosunu oynat">
+                        <img src="playvideo.png" alt="Video">
+                    </button>
+                    <a class="asset-button" href="oyun+videolar/cikit/html/" aria-label="Çikit oyununa geç">
+                        <img src="playgame.png" alt="Oyun">
+                    </a>
+                </div>
+            </article>
+
+            <article class="game-card left lower" style="--delay: 120ms">
+                <div class="card-copy">
+                    <h2>CAMBI ATMAY</h2>
+                    <p>Hedefe nişan alma ve isabet becerisini öne çıkaran bozkır oyunu.</p>
+                </div>
+                <div class="actions">
+                    <button class="asset-button" type="button" data-video="oyun+videolar/cambi-atmay/intro.mp4" aria-label="Cambı Atmay videosunu oynat">
+                        <img src="playvideo.png" alt="Video">
+                    </button>
+                    <a class="asset-button" href="oyun+videolar/cambi-atmay/index.html" aria-label="Cambı Atmay oyununa geç">
+                        <img src="playgame.png" alt="Oyun">
+                    </a>
+                </div>
+            </article>
+
+            <article class="game-card right top" style="--delay: 80ms">
+                <div class="card-copy">
+                    <h2>URMAY TOP</h2>
+                    <p>Topla oynanan, çeviklik ve takım uyumunu geliştiren çocuk oyunu.</p>
+                </div>
+                <div class="actions only-video">
+                    <button class="asset-button" type="button" data-video="videolar/urmay-top.mp4" aria-label="Urmay Top videosunu oynat">
+                        <img src="playvideo.png" alt="Video">
+                    </button>
+                </div>
+            </article>
+
+            <article class="game-card right lower" style="--delay: 200ms">
+                <div class="card-copy">
+                    <h2>KAYIRMAK</h2>
+                    <p>Denge, hız ve dikkat gerektiren geleneksel açık alan oyunu.</p>
+                </div>
+                <div class="actions only-video">
+                    <button class="asset-button" type="button" data-video="videolar/kayırmak.mp4" aria-label="Kayırmak videosunu oynat">
+                        <img src="playvideo.png" alt="Video">
+                    </button>
+                </div>
+            </article>
+
+            <article class="game-card center bottom" style="--delay: 260ms">
+                <div class="card-copy">
+                    <h2>TOKUZ KUMALAK</h2>
+                    <p>Akıl yürütme ve stratejiyle oynanan köklü Kırgız zeka oyunu.</p>
+                </div>
+                <div class="actions">
+                    <button class="asset-button" type="button" data-video="oyun+videolar/tokuz-kumalak/intro.mp4" aria-label="Tokuz Kumalak videosunu oynat">
+                        <img src="playvideo.png" alt="Video">
+                    </button>
+                    <a class="asset-button" href="oyun+videolar/tokuz-kumalak/oyun/game/index.html" aria-label="Tokuz Kumalak oyununa geç">
+                        <img src="playgame.png" alt="Oyun">
+                    </a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <div class="video-modal" id="videoModal" aria-hidden="true">
+        <div class="video-panel" role="dialog" aria-modal="true" aria-label="Video oynatıcı">
+            <button class="close-button" type="button" aria-label="Videoyu kapat">Kapat</button>
+            <video id="videoPlayer" controls playsinline></video>
+        </div>
+    </div>
+
+    <div class="rotate-warning" aria-hidden="true">
+        <div class="phone-icon" aria-hidden="true"></div>
+        <p>Lütfen telefonu yan çevirin.</p>
+    </div>
+
+    <audio id="bgAudio" src="fon.mpeg" autoplay loop preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

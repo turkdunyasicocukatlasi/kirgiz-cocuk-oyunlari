@@ -1,0 +1,65 @@
+{
+	"name": "bilgiES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ortak_eventlerES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 282068301119167
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 416658535593117,
+					"parameters": {
+						"variable": "LayoutMuzikSesi",
+						"value": "-20"
+					}
+				}
+			],
+			"sid": 828812476584404,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 346346737101826,
+							"parameters": {
+								"variable": "Ses_Kapali"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 592660355754661,
+							"parameters": {
+								"audio-file": {
+									"path": "bilgi"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"bilgi\""
+							}
+						}
+					],
+					"sid": 126595124450157
+				}
+			]
+		}
+	],
+	"sid": 950844033051381
+}

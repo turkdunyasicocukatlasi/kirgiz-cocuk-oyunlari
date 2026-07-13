@@ -1,0 +1,66 @@
+{
+	"name": "sopa_kisa",
+	"plugin-id": "Sprite",
+	"sid": 956250398682290,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 251529961363538
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 251,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2414627,
+						"collisionPoly": {
+							"points": [
+								0.05976095617529881,
+								0,
+								1,
+								0,
+								1,
+								0.15534979493820422,
+								1,
+								1,
+								0.9123505976095617,
+								1,
+								0.306108897613735,
+								1,
+								0,
+								1,
+								0,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 365700546903189,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
