@@ -1,181 +1,48 @@
-<!doctype html>
-<html lang="tr">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Çikit Oyunu</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    <meta charset="UTF-8">
+	<title>cikit</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	
+	<!-- Made with Construct, the game and app creator :: https://www.construct.net -->
+	<meta name="generator" content="Scirra Construct">
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-            background: #2f2f2f;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+	<meta name="author" content="Emre">
 
-        body {
-            display: grid;
-            place-items: center;
-        }
+	<link rel="manifest" href="appmanifest.json">
+	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+	<link rel="icon" type="image/png" href="icons/icon-256.png">
 
-        .game-frame {
-            position: relative;
-            width: min(92vw, calc(92vh * 16 / 9));
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            background: #8fcbe8;
-            box-shadow: 0 0 0 6px #9ec9d8;
-        }
+	<link rel="stylesheet" href="style.css">
 
-        .scene,
-        .banner,
-        .instruction,
-        .restart,
-        .side-button {
-            position: absolute;
-            display: block;
-            user-select: none;
-        }
 
-        .scene {
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
-        .instruction {
-            top: 4.5%;
-            left: 8.5%;
-            width: 53%;
-            height: auto;
-        }
-
-        .banner {
-            top: 23%;
-            left: 9%;
-            width: 52%;
-            height: auto;
-        }
-
-        .restart {
-            top: 44%;
-            left: 29.5%;
-            width: 18%;
-            min-width: 92px;
-            border: 0;
-            padding: 0;
-            background: transparent;
-            cursor: pointer;
-            transition: transform 150ms ease, filter 150ms ease;
-        }
-
-        .restart:hover,
-        .restart:focus-visible,
-        .side-button:hover,
-        .side-button:focus-visible {
-            transform: scale(1.06);
-            filter: brightness(1.08) drop-shadow(0 0 8px rgba(255, 255, 255, 0.45));
-            outline: none;
-        }
-
-        .restart img,
-        .side-button img {
-            width: 100%;
-            height: auto;
-            display: block;
-            pointer-events: none;
-        }
-
-        .side-button {
-            right: 3%;
-            width: 5.2%;
-            min-width: 34px;
-            border: 0;
-            padding: 0;
-            background: transparent;
-            cursor: pointer;
-        }
-
-        .home {
-            top: 5.4%;
-        }
-
-        .fullscreen {
-            top: 15.3%;
-        }
-
-        .sound {
-            top: 25.2%;
-        }
-
-        @media (max-width: 720px) {
-            .game-frame {
-                width: 100vw;
-                box-shadow: none;
-            }
-        }
-    </style>
-</head>
+</head> 
+ 
 <body>
-    <main class="game-frame" aria-label="Çikit oyun ekranı">
-        <img class="scene" src="images/arka_plan-animation 1-000.png" alt="">
-        <img class="instruction" src="images/yonerge1-animation 1-000.png" alt="Kısa sopayı havaya kaldırıp vurarak ekranın dışına gönderelim.">
-        <img class="banner" src="images/madalya-animation 1-000.png" alt="Tebrikler. Tutan Takım Kazandı.">
 
-        <button class="restart" type="button" aria-label="Yeniden oyna">
-            <img src="images/yeniden_oyna_btn1-animation 1-000.png" alt="Yeniden Oyna">
-        </button>
+	
 
-        <a class="side-button home" href="../../../index.html" aria-label="Ana sayfa">
-            <img src="images/anaysayfa_btn-animation 1-000.png" alt="">
-        </a>
+<script>
+if (location.protocol.substr(0, 4) === "file")
+{
+	alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+}
+</script>
+	
+	<noscript>
+		<div id="notSupportedWrap">
+			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+		</div>
+	</noscript>
+	<script src="scripts/modernjscheck.js"></script>
+	<script src="scripts/supportcheck.js"></script>
+	<script src="scripts/offlineclient.js" type="module"></script>
+	<script src="scripts/main.js" type="module"></script>
+	<script src="scripts/register-sw.js" type="module"></script>
 
-        <button class="side-button fullscreen" type="button" aria-label="Tam ekran">
-            <img src="images/tam_ekran_btn-animation 1-000.png" alt="">
-        </button>
-
-        <button class="side-button sound" type="button" aria-label="Sesi aç veya kapat">
-            <img src="images/ses_ac_btn-animation 1-000.png" alt="">
-        </button>
-    </main>
-
-    <audio id="gameAudio" src="sounds/fon.webm" loop preload="auto"></audio>
-
-    <script>
-        const restartButton = document.querySelector(".restart");
-        const fullscreenButton = document.querySelector(".fullscreen");
-        const soundButton = document.querySelector(".sound");
-        const gameAudio = document.getElementById("gameAudio");
-
-        gameAudio.volume = 0.25;
-
-        restartButton.addEventListener("click", () => {
-            window.location.reload();
-        });
-
-        fullscreenButton.addEventListener("click", () => {
-            const frame = document.querySelector(".game-frame");
-            if (!document.fullscreenElement) {
-                frame.requestFullscreen?.();
-                return;
-            }
-            document.exitFullscreen?.();
-        });
-
-        soundButton.addEventListener("click", () => {
-            if (gameAudio.paused) {
-                gameAudio.play().catch(() => {});
-                return;
-            }
-            gameAudio.pause();
-        });
-    </script>
-</body>
+</body> 
 </html>
