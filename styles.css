@@ -28,8 +28,8 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(circle at center, rgba(0, 0, 0, 0.04) 0 34%, rgba(0, 0, 0, 0.42) 72%, rgba(0, 0, 0, 0.66) 100%),
-        linear-gradient(180deg, rgba(6, 21, 38, 0.2), rgba(4, 4, 3, 0.62));
+        radial-gradient(circle at center, rgba(0, 0, 0, 0.012) 0 34%, rgba(0, 0, 0, 0.126) 72%, rgba(0, 0, 0, 0.198) 100%),
+        linear-gradient(180deg, rgba(6, 21, 38, 0.06), rgba(4, 4, 3, 0.186));
     pointer-events: none;
 }
 

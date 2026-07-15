@@ -36,8 +36,6 @@ body{
 /* intro / home */
 #screen-intro{ background:#000; }
 #screen-intro.on{ display:block; }
-#introVideo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#000; display:none; }
-#introVideo.playing{ display:block; }
 #introHome{ position:absolute; inset:0; }
 #introPoster{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 #introHomeUI{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -49,12 +47,6 @@ body{
   padding:14px 30px; cursor:pointer; box-shadow:0 6px 0 #7c5a12, 0 14px 24px -8px rgba(0,0,0,.5); transition:transform .09s, box-shadow .09s; }
 .intro-btn2:hover{ transform:translateY(-1px); }
 .intro-btn2:active{ transform:translateY(4px); box-shadow:0 2px 0 #7c5a12; }
-.intro-skip{ position:absolute; right:16px; bottom:16px; display:none;
-  font-family:var(--body); font-weight:700; font-size:13px; letter-spacing:.06em; color:var(--cream);
-  background:rgba(10,15,35,.72); border:1.5px solid rgba(244,236,215,.5); border-radius:30px;
-  padding:10px 20px; cursor:pointer; backdrop-filter:blur(3px); }
-.intro-skip:hover{ background:rgba(10,15,35,.92); }
-
 /* ornament corner (kyrgyz-style flourish) */
 .orn{ position:absolute; width:34px; height:34px; opacity:.85; pointer-events:none;
   background:no-repeat center/contain; }
@@ -305,18 +297,15 @@ h1.title{ font-family:var(--disp); font-weight:800; line-height:.92; text-align:
 
   <!-- ===== INTRO / HOME SCREEN ===== -->
   <section id="screen-intro" class="screen on">
-    <video id="introVideo" playsinline preload="auto" src="intro.mp4"></video>
     <div id="introHome">
       <img id="introPoster" alt="">
       <div id="introHomeUI">
         <h1 class="title intro-title">Cambı <span class="b">Atmay</span></h1>
         <div class="intro-buttons">
-          <button id="introVideoBtn" class="intro-btn2">Tanıtım Videosu</button>
-          <button id="introStartBtn" class="intro-btn2">Oyunu Başlat</button>
+          <button id="introStartBtn" class="intro-btn2">Play</button>
         </div>
       </div>
     </div>
-    <button id="introHomeBtn" class="intro-skip">Ana Sayfa</button>
   </section>
 
   <!-- ===== SELECT SCREEN ===== -->
@@ -335,9 +324,9 @@ h1.title{ font-family:var(--disp); font-weight:800; line-height:.92; text-align:
         <ol>
           <li><b>Takım seçimi:</b> Seçtiğin 3 kişilik takım <b>atıcı</b>, diğeri <b>ebe</b> olur.</li>
           <li><b>Kuleyi yık:</b> Atıcı, çizginin arkasından topu 7 taşlı kuleye fırlatır. <b>3 atış hakkı</b> var — güç çubuğunu isabet bölgesinde durdur.</li>
-          <li><b>Diz & kaç:</b> Kule yıkılınca <b>10 saniye</b> içinde dağılan 7 taşı üst üste dizmelisin.</li>
+          <li><b>Diz & kaç:</b> Kule yıkılınca <b>30 saniye</b> içinde dağılan 7 taşı üst üste dizmelisin.</li>
           <li><b>Kazanma:</b> Vurulmadan 7 taşı dizersen <b>dalya</b> yapar, puan alırsın.</li>
-          <li><b>Kaybetme:</b> 10 saniyede dizemezsen ebe takım seni vurmuş sayılır; roller değişir.</li>
+          <li><b>Kaybetme:</b> 30 saniyede dizemezsen ebe takım seni vurmuş sayılır; roller değişir.</li>
           <li>Önce <b>3 dalya</b> yapan takım maçı kazanır.</li>
         </ol>
       </div>
@@ -446,7 +435,7 @@ h1.title{ font-family:var(--disp); font-weight:800; line-height:.92; text-align:
             <circle id="ringArc" cx="23" cy="23" r="19" fill="none" stroke="var(--gold)" stroke-width="5"
               stroke-linecap="round" stroke-dasharray="119.4" stroke-dashoffset="0"/>
           </svg>
-          <div class="num" id="ringNum">10</div>
+          <div class="num" id="ringNum">30</div>
         </div>
         <div class="txt">Taşları diz!<br><b id="stackLeft">7</b> taş kaldı</div>
         <div class="stackcount" id="stackDots"></div>
@@ -695,7 +684,7 @@ function startAim(){
   cancelAnimationFrame(G.powerRAF);
   const loop=()=>{
     if(!G.aiming) return;
-    G.power+=G.powerDir*0.009;
+    G.power+=G.powerDir*0.0063;
     if(G.power>=1){ G.power=1; G.powerDir=-1; }
     if(G.power<=0){ G.power=0; G.powerDir=1; }
     $('#powerMarker').style.left=(G.power*100)+'%';
@@ -904,9 +893,9 @@ function placeStone(st){
 /* ---------- STACK TIMER ---------- */
 function startStackTimer(){
   $('#stack-timer').classList.add('on');
-  G.timeLeft=10.0; const total=10.0; const C=119.4;
-  updateStackDots(); $('#ringNum').textContent='10';
-  let last=performance.now(); let lastTick=10;
+  G.timeLeft=30.0; const total=30.0; const C=119.4;
+  updateStackDots(); $('#ringNum').textContent='30';
+  let last=performance.now(); let lastTick=30;
   cancelAnimationFrame(G.timerRAF);
   const loop=(now)=>{
     const dt=(now-last)/1000; last=now;
@@ -1027,7 +1016,7 @@ function roundLost(reason){
   sfx.lose();
   const other=G.thrower===1?2:1;
   const msg = reason==='time'
-    ? `Süre doldu! Taşları 10 saniyede dizemedin, ebe takım seni vurmuş sayılır.`
+    ? `Süre doldu! Taşları 30 saniyede dizemedin, ebe takım seni vurmuş sayılır.`
     : `3 atışta kuleyi deviremedin. Sıra ebe takımına geçer.`;
   flashToast('Vuruldun! 💢','var(--red)');
   setPhase('💢 Vuruldun');
@@ -1253,22 +1242,12 @@ window.addEventListener('resize',()=>{
   },200);
 });
 
-// intro / home: giriş görseli + başlık + butonlar; Tanıtım Videosu -> intro.mp4; Ana Sayfa -> geri döner
+// intro / home: giriş görseli + başlık + tek Play butonu
 (function(){
-  const scr=$('#screen-intro'), v=$('#introVideo'), home=$('#introHome'), homeBtn=$('#introHomeBtn'), poster=$('#introPoster');
+  const scr=$('#screen-intro'), poster=$('#introPoster');
   if(ASSETS.intro_poster) poster.src=ASSETS.intro_poster;
-  function showHome(){ try{ v.pause(); }catch(e){} v.classList.remove('playing'); home.style.display='block'; homeBtn.style.display='none'; }
-  function playVideo(){
-    home.style.display='none'; v.classList.add('playing'); homeBtn.style.display='block';
-    try{ v.currentTime=0; }catch(e){}
-    const p=v.play(); if(p && p.catch) p.catch(()=>{ showHome(); });
-  }
-  function startGame(){ try{ v.pause(); }catch(e){} scr.classList.remove('on'); $('#screen-select').classList.add('on'); }
+  function startGame(){ scr.classList.remove('on'); $('#screen-select').classList.add('on'); }
   $('#introStartBtn').addEventListener('click', startGame);
-  $('#introVideoBtn').addEventListener('click', playVideo);
-  homeBtn.addEventListener('click', showHome);
-  v.addEventListener('ended', showHome);
-  v.addEventListener('error', ()=>{ if(v.classList.contains('playing')) showHome(); });
 })();
 buildSelect();
 })();
